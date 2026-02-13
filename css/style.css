@@ -10,9 +10,9 @@ a {
 }
 
 .intro-bg {
-    background: 
-      linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-      url("../bg1.png");
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url("../bg1.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -27,7 +27,7 @@ a {
     border-radius: 14px;
     width: 360px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .app-name {
@@ -66,7 +66,7 @@ a {
 
 .card-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
@@ -118,6 +118,7 @@ a {
         opacity: 0;
         transform: translateY(15px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -137,7 +138,7 @@ a {
     border-left: 5px solid #0d6efd;
     border-radius: 8px;
     margin-top: 10px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
 }
 
 .toast-success {
@@ -152,7 +153,39 @@ a {
     .intro-box {
         width: 90%;
     }
+
     .app-name {
         font-size: 26px;
     }
+
+    .carousel-item img {
+        height: 300px !important;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Feature Cards */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Carousel Tweaks */
+.carousel-caption {
+    bottom: 2rem;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
 }

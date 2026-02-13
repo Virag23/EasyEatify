@@ -54,27 +54,95 @@ const App = {
 
         if (!user) {
             mainContent.innerHTML = `
-                <div class="text-center mt-5 fade-in-up">
-                    <h1 class="display-4 text-primary mb-3">Welcome to EasyEatify</h1>
-                    <p class="lead mb-5">Select your role to continue.</p>
-                    
-                    <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <button class="btn btn-outline-primary btn-lg shadow-sm" style="min-width: 200px;" onclick="App.openLogin('customer')">
-                            Login as Customer
+                <div>
+                    <!-- Carousel -->
+                    <div id="introCarousel" class="carousel slide shadow-lg mb-5" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#introCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#introCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#introCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner rounded-4 overflow-hidden">
+                            <div class="carousel-item active">
+                                <img src="bg1.png" class="d-block w-100 object-fit-cover" style="height: 500px;" alt="Restaurant Ambiance">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                    <h3>Experience Fine Dining</h3>
+                                    <p>Enjoy our premium selection of authentic dishes in a cozy atmosphere.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="bg2.png" class="d-block w-100 object-fit-cover" style="height: 500px;" alt="Delicious Food">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                    <h3>Fresh & Hot</h3>
+                                    <p>Our meals are prepared with the freshest ingredients just for you.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="bg3.png" class="d-block w-100 object-fit-cover" style="height: 500px;" alt="Fast Service">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                    <h3>Quick & Easy Ordering</h3>
+                                    <p>Order from your table or online with just a few clicks.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#introCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="btn btn-outline-dark btn-lg shadow-sm" style="min-width: 200px;" onclick="App.openLogin('staff')">
-                            Login as Staff
-                        </button>
-                        <button class="btn btn-outline-success btn-lg shadow-sm" style="min-width: 200px;" onclick="App.openLogin('manager')">
-                            Login as Manager
+                        <button class="carousel-control-next" type="button" data-bs-target="#introCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    
-                    <div class="mt-4">
-                        <p class="text-muted">Don't have an account?</p>
-                        <button class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#registerModal">
-                            Register as Customer
-                        </button>
+
+                    <!-- Features Section -->
+                    <div class="row text-center mb-5 fade-in-up">
+                        <div class="col-md-4 mb-4">
+                            <div class="feature-card p-4 h-100 shadow-sm rounded-4 bg-white">
+                                <div class="display-4 text-primary mb-3">📋</div>
+                                <h4>Easy Ordering</h4>
+                                <p class="text-muted">Browse our digital menu and place orders instantly without waiting.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="feature-card p-4 h-100 shadow-sm rounded-4 bg-white">
+                                <div class="display-4 text-success mb-3">🚀</div>
+                                <h4>Fast Delivery</h4>
+                                <p class="text-muted">Lightning fast service to ensure your food arrives hot and fresh.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="feature-card p-4 h-100 shadow-sm rounded-4 bg-white">
+                                <div class="display-4 text-warning mb-3">⭐</div>
+                                5 Star Quality</h4>
+                                <p class="text-muted">Top-rated chefs preparing exquisite meals for a memorable experience.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Login/Action Section -->
+                    <div class="text-center bg-white p-5 rounded-4 shadow-sm fade-in-up">
+                        <h2 class="mb-4 text-primary">Get Started</h2>
+                        <p class="lead mb-4">Select your role to login or create a new account.</p>
+                        
+                        <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
+                            <button class="btn btn-outline-primary btn-lg px-4" onclick="App.openLogin('customer')">
+                                Login as Customer
+                            </button>
+                            <button class="btn btn-outline-dark btn-lg px-4" onclick="App.openLogin('staff')">
+                                Staff Login
+                            </button>
+                            <button class="btn btn-outline-success btn-lg px-4" onclick="App.openLogin('manager')">
+                                Manager Login
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <span class="text-muted">New here?</span>
+                            <button class="btn btn-link fw-bold text-decoration-none" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                Create Customer Account
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;
